@@ -54,4 +54,3 @@ accuracy = accuracy_score(y_test, y_pred)
 print(f'Accuracy: {accuracy:.4f}')
 if accuracy >= .80:
     print("Yippee")
-
