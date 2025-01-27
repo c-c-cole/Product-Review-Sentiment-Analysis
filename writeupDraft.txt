@@ -26,6 +26,10 @@ Began work on Naive Bayes
     - But wait, why is accuracy .67 when we established that predicting all 5 stars would result in .68 accruacy?
         - Because the accuracy is based on the testing data, a random sample, so the actual accuracy may slightly skew in either direction
 Started using classificationReport() for testing
+    -MCC is based off of TP, TN, FP, FN, all of which influence the reliability score. Currently, the model is exhbiting a high number of false positive predictions.
+        Specifically, the model will incorrectly predict a 5 star rating when the actual value tends to be lower.
+        Overall, this is decreasing the mcc, since many 3 and 4 stars ratings are predicted to be 5 stars.
+        As mentioned above, this is actually occuring for every rating that is not 5 stars i.e. the model currently predicts any rating to be 5 stars
 
 Use CNB, docs says good for imbalanced datasets
 - Doesn't really work better out of the box (improve?)
