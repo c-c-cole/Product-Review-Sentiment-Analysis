@@ -9,7 +9,7 @@ from nltk.stem import PorterStemmer
 from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
 from sklearn.model_selection import train_test_split
 
-from sklearn.naive_bayes import LinearSVC
+from sklearn.svm import LinearSVC
 from sklearn.metrics import accuracy_score, matthews_corrcoef
 
 from sklearn.metrics import classification_report
