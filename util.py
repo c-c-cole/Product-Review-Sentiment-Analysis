@@ -4,6 +4,8 @@ from sklearn.metrics import accuracy_score, matthews_corrcoef
 from sklearn.metrics import classification_report
 
 def test (y_test, y_pred):
+    print("------------------------TESTS-------------------------")
+    
     print("y_test distribution:", y_test.value_counts())
     # This is the key metric! We see that ALL predictions are 5. Overfitting!
     print("y_pred distribution:", pd.Series(y_pred).value_counts())
