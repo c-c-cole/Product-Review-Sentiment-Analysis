@@ -12,6 +12,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, matthews_corrcoef
 
+import util
+
 data = pd.read_json('newdata.json')
 
 # I'm good to delete this line
@@ -65,24 +67,7 @@ model.fit(X_train, y_train)
 
 y_pred = model.predict(X_test)
 
-mcc = matthews_corrcoef(y_test, y_pred)
-print("Matthews Correlation Coefficient:", mcc)
-if mcc == 1:
-    print("Perfectly Reliable")
-elif 0.70 <= mcc < 1.0:
-    print("Excellent Reliability")
-elif 0.50 <= mcc < 0.7:
-    print("Good Reliability")
-elif 0.30 <= mcc < 0.5:
-    print("Moderate Reliability")
-elif 0.00 < mcc < 0.3:
-    print("Weak Reliability")
-elif mcc == 0:
-    print("Model performs no better than random predictions")
-else:
-    print("Model predictions inversely related to actual outcomes")
+comparison = pd.DataFrame({'y_test': y_test, 'y_pred': y_pred})
+print(comparison.sample(10))
 
-accuracy = accuracy_score(y_test, y_pred)
-print(f'Accuracy: {accuracy:.4f}')
-if accuracy >= .80:
-    print("Yippee")
+util.test()
