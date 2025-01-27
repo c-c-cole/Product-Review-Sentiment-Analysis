@@ -16,7 +16,6 @@ data = pd.read_json('newdata.json')
 
 print(data.head())
 
-# Do we have to do this every time
 nltk.download('stopwords')
 
 stop_words = set(stopwords.words('english'))
