@@ -17,7 +17,8 @@ data = pd.read_json('newdata.json')
 # I'm good to delete this line
 # print(data.head())
 
-#nltk.download('stopwords')
+# Keep commented ig
+# nltk.download('stopwords')
 
 stop_words = set(stopwords.words('english'))
 stemmer = PorterStemmer()
