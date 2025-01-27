@@ -59,4 +59,4 @@ y_pred = model.predict(X_test)
 comparison = pd.DataFrame({'y_test': y_test, 'y_pred': y_pred})
 print(comparison.sample(10))
 
-util.test()
+util.test(y_test, y_pred)
