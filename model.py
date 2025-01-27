@@ -16,7 +16,7 @@ data = pd.read_json('newdata.json')
 
 print(data.head())
 
-nltk.download('stopwords')
+#nltk.download('stopwords')
 
 stop_words = set(stopwords.words('english'))
 stemmer = PorterStemmer()
