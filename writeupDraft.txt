@@ -1,0 +1,31 @@
+1/26
+General set up, ran LR model. 
+- 69% accuracy, .22 MCC
+Added class_weight=balanced
+- 57% accuracy, .27 MCC
+Brief intuition: 
+# The following line penalizes the model for making mistakes on minority classes
+# This can be useful because we have very imbalanced data (I think)
+# The model focuses more on minority classes, 
+#       which reduces accuracy (as it's more focused on the less likely cases)
+# but does improve the mcc, which cares about the classes in a more equal way 
+# So, accuracy goes from .69 -> .57 but mcc goes from .22 -> .27
+# Overarching question is: "Which metrics do we care about? Which ones mean our model is better?"
+#       As a side thing, we could try seeing what the metrics for something pre-built is (BERT, HuggingFace etc), and use their 
+#       performance in these stats to get a general idea of what we're aiming for 
+#       (eg, if BERT has low accuracy but high mcc, maybe that means the model is better, if we can justify this)
+# model = LogisticRegression(class_weight='balanced', max_iter=1000)
+
+1/27
+Wrote datasetAnalysis.py to visualize data breakdown
+- 68% of reviews are 5 star reviews, meaning 68% accuracy can be achieved if 
+    the model overfits the data and just predicts all ratings to be 5 stars
+Began work on Naive Bayes
+- MCC = 0.0 (error?), Accuracy = .67 (ass)
+    - MCC is not an error, the model overfits, and predicts 5 for every vector
+    - But wait, why is accuracy .67 when we established that predicting all 5 stars would result in .68 accruacy?
+        - Because the accuracy is based on the testing data, a random sample, so the actual accuracy may slightly skew in either direction
+Started using classificationReport() for testing
+
+Use CNB, docs says good for imbalanced datasets
+- Doesn't really work better out of the box (improve?)

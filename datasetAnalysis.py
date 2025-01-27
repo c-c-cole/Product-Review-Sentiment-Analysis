@@ -15,11 +15,15 @@ stars[4] = data[data['overall'] == 5].shape[0]
 print(f"Breakdown:\n1: {stars[0]}\n2: {stars[1]}\n3: {stars[2]}\n4: {stars[3]}\n5: {stars[4]}")
 
 # Plotting
+'''
 plt.bar(range(1, len(stars) + 1), stars, color='skyblue', edgecolor='black')
 plt.title('Star Rating Breakdown')
 plt.xlabel('Star Rating')
 plt.ylabel('Number of Reviews')
 plt.xticks(range(1, len(stars) + 1))
 plt.show()
+'''
+
+print(f"Percent of 5 stars to rest of model is {stars[4]/data.shape[0]}")
 
 
