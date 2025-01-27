@@ -33,3 +33,8 @@ Started using classificationReport() for testing
 
 Use CNB, docs says good for imbalanced datasets
 - Doesn't really work better out of the box (improve?)
+
+Began work on linearSVC
+    - Decent initial approach for classification with <100k samples
+    - Accuracy: 0.6784
+    - MCC: 0.23639
